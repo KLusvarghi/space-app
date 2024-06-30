@@ -1,10 +1,26 @@
 import { createGlobalStyle } from 'styled-components';
+import GandhiSansRegular from './fontes/GandhiSans-Regular.otf';
+import GandhiSansBold from './fontes/GandhiSans-Bold.otf';
 
 const EstilosGlobais = createGlobalStyle`
+
+  @font-face {
+    font-family: 'GandhiSansRegular';
+    /* colcoando essa 3 maneiras para facilitar e ver como o sistema operacional e o desenvolvedor lidará com isso */
+    /* seguindo as boas práticas do Emotion para lidar com fontes */
+    src: local('Gandhi Sans Regular'), local('GandhiSansRegular'), url(${GandhiSansRegular});
+    /* src: url(); -- por padrao ela vem assim*/ 
+  }
+
+  @font-face {
+    font-family: 'GandhiSansBold';
+    src: local('Gandhi Sans Bold'), local('GandhiSansBold'), url(${GandhiSansBold});
+  }
 
   html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%; 
+    font-family: GandhiSansRegular;
   }
 
   body {
