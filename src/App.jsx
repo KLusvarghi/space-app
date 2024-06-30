@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import EstilosGlobais from "./components/EstilogsGlobais";
+import Cabecalho from "./components/Cabecalho";
+import BarraLateral from "./components/BarraLateral";
 
 // criando um component styled
   // definindo como contante - dando o nome - colocando o "styled" da importação - a tag HTMl que queremos interpretar - crase ``
@@ -12,6 +14,8 @@ const FundoGradiente = styled.div`
 function App() {
   return <FundoGradiente>
     <EstilosGlobais/>
+    <Cabecalho/>
+    <BarraLateral/>
   </FundoGradiente>
 }
 
