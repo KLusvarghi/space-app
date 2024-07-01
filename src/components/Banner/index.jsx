@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const BannerEstilziado = styled.figure`
   background-image: ${prop => `url(${prop.$backgroundImage})`};
   background-repeat: no-repeat;
+  background-size: cover;
   flex-grow: 1;
   min-height: 328px;
   max-width: 100%;
@@ -18,7 +19,7 @@ const TituloEstilizado = styled.h1`
   line-height: 48px;
   color: #FFF;
   max-width: 300px;
-  padding-left: 0 64px;
+  padding: 0 64px;
 `;
 
 export const Banner = ({ txt, backgroundImage }) => {
