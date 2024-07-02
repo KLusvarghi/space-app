@@ -5,6 +5,9 @@ import BarraLateral from './components/BarraLateral';
 import Banner from './components/Banner';
 import backgroundImage from './assets/banner.png';
 import Galeria from './components/Galeria';
+import fotos from './fotos.json'
+import { useState } from 'react';
+
 
 // criando um component styled
 // definindo como contante - dando o nome - colocando o "styled" da importação - a tag HTMl que queremos interpretar - crase ``
@@ -31,7 +34,9 @@ const ConteudoGaleria = styled.section`
   flex-grow: 1; //para que cresca donforme o espaço disponivel
 `;
 
-function App() {
+const App = () => {
+  const [fotosGaleria , setFotosGaleria] = useState(fotos)
+
   return (
     <FundoGradiente>
       <EstilosGlobais />
@@ -44,7 +49,7 @@ function App() {
               txt="A galeria mais completa de fotos do espaço!"
               backgroundImage={backgroundImage}
             />
-            <Galeria />
+            <Galeria fotos={fotosGaleria} aoFotoSelecionada={foto => setFotosGaleria(foto)}/>
           </ConteudoGaleria>
         </MainContainer>
       </AppContainer>
