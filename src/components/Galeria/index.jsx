@@ -19,6 +19,7 @@ const ImagensContainer = styled.section`
   gap: 24px;
 `;
 
+// recebendo "aoFotoSelecionada" do APP.jsx que será o componente que conterá a foto selecionada para abrir o modal
 const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
   //dando um valor padrão caso "fotos" venha vazio
   return (
@@ -29,7 +30,8 @@ const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
           <Titulo>Navegue pela galeria</Titulo>
           <ImagensContainer>
             {fotos.map((foto) => (
-              <Imagem key={foto.id} foto={foto} />
+              // passando para o compoennte "imagem" a "aoFotoSelecionada" pela props "aoZoomSolicitado" que lá no componente "imagem" ele irá retornar a foto que foi clicada
+              <Imagem aoZoomSolicitado={aoFotoSelecionada} key={foto.id} foto={foto} />
             ))}
           </ImagensContainer>
         </SessaoFLuida>
