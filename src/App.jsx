@@ -8,6 +8,7 @@ import Galeria from './components/Galeria';
 import fotos from './fotos.json';
 import { useState } from 'react';
 import ModalZoom from './components/ModalZoom';
+import Footer from './components/Footer';
 
 // criando um component styled
 // definindo como contante - dando o nome - colocando o "styled" da importação - a tag HTMl que queremos interpretar - crase ``
@@ -76,6 +77,7 @@ const App = () => {
             />
           </ConteudoGaleria>
         </MainContainer>
+        <Footer/>
       </AppContainer>
       <ModalZoom
         foto={fotoSelecionada}
