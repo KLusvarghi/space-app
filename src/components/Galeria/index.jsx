@@ -6,6 +6,7 @@ import Imagem from './Imagem';
 
 const GaleriaContainer = styled.div`
   display: flex;
+  gap: 24px;
 `;
 
 const SessaoFLuida = styled.section`
@@ -20,7 +21,7 @@ const ImagensContainer = styled.section`
 `;
 
 // recebendo "aoFotoSelecionada" do APP.jsx que será o componente que conterá a foto selecionada para abrir o modal
-const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
+const Galeria = ({ fotos = [], aoFotoSelecionada, aoAlternarFavorito }) => {
   //dando um valor padrão caso "fotos" venha vazio
   return (
     <>
@@ -31,7 +32,12 @@ const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
           <ImagensContainer>
             {fotos.map((foto) => (
               // passando para o compoennte "imagem" a "aoFotoSelecionada" pela props "aoZoomSolicitado" que lá no componente "imagem" ele irá retornar a foto que foi clicada
-              <Imagem aoZoomSolicitado={aoFotoSelecionada} key={foto.id} foto={foto} />
+              <Imagem
+                aoAlternarFavorito={aoAlternarFavorito}
+                aoZoomSolicitado={aoFotoSelecionada}
+                key={foto.id}
+                foto={foto}
+              />
             ))}
           </ImagensContainer>
         </SessaoFLuida>
